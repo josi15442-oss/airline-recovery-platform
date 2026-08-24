@@ -1,0 +1,495 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :resolveMainClassName UP-TO-DATE
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-08-24T16:34:46.190-05:00  INFO 65639 --- [airline-recovery-platform] [           main] c.a.r.AirlineRecoveryPlatformApplication : Starting AirlineRecoveryPlatformApplication using Java 21.0.2 with PID 65639 (/Users/josi/Air-line-Project/airline-recovery-platform/build/classes/java/main started by josi in /Users/josi/Air-line-Project/airline-recovery-platform)
+2026-08-24T16:34:46.195-05:00  INFO 65639 --- [airline-recovery-platform] [           main] c.a.r.AirlineRecoveryPlatformApplication : No active profile set, falling back to 1 default profile: "default"
+2026-08-24T16:34:46.913-05:00  INFO 65639 --- [airline-recovery-platform] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-24T16:34:46.966-05:00  INFO 65639 --- [airline-recovery-platform] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2026-08-24T16:34:47.683-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-08-24T16:34:47.700-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-08-24T16:34:47.700-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-08-24T16:34:47.747-05:00  INFO 65639 --- [airline-recovery-platform] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1508 ms
+2026-08-24T16:34:48.098-05:00  INFO 65639 --- [airline-recovery-platform] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-24T16:34:48.146-05:00  INFO 65639 --- [airline-recovery-platform] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-08-24T16:34:48.576-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-24T16:34:48.606-05:00  INFO 65639 --- [airline-recovery-platform] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-24T16:34:48.770-05:00  INFO 65639 --- [airline-recovery-platform] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35d88a54
+2026-08-24T16:34:48.772-05:00  INFO 65639 --- [airline-recovery-platform] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-24T16:34:48.840-05:00  INFO 65639 --- [airline-recovery-platform] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://127.0.0.1:5433/airline_recovery]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.15
+	Default catalog/schema: airline_recovery/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-24T16:34:49.760-05:00  INFO 65639 --- [airline-recovery-platform] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-24T16:34:49.840-05:00  INFO 65639 --- [airline-recovery-platform] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-24T16:34:49.924-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-24T16:34:50.737-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-08-24T16:34:50.855-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-08-24T16:34:50.900-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-airline-recovery-group-1
+	client.rack = 
+	config.providers = []
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = airline-recovery-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	share.acquire.mode = BATCH_OPTIMIZED
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JacksonJsonDeserializer
+
+2026-08-24T16:34:50.940-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-08-24T16:34:51.179-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.2.1
+2026-08-24T16:34:51.179-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 92f61c44867f39dc
+2026-08-24T16:34:51.179-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1787607291177
+2026-08-24T16:34:51.192-05:00  INFO 65639 --- [airline-recovery-platform] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Subscribed to topic(s): flight.disrupted
+2026-08-24T16:34:51.211-05:00  INFO 65639 --- [airline-recovery-platform] [           main] c.a.r.AirlineRecoveryPlatformApplication : Started AirlineRecoveryPlatformApplication in 5.415 seconds (process running for 5.749)
+2026-08-24T16:34:51.593-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2026-08-24T16:34:51.597-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-08-24T16:34:51.600-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] (Re-)joining group
+2026-08-24T16:34:51.618-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Request joining group due to: need to re-join with the given member-id: consumer-airline-recovery-group-1-e3602cc4-264b-46f6-a7ea-357cf61d4646
+2026-08-24T16:34:51.619-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] (Re-)joining group
+2026-08-24T16:34:54.732-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Successfully joined group with generation Generation{generationId=13, memberId='consumer-airline-recovery-group-1-e3602cc4-264b-46f6-a7ea-357cf61d4646', protocol='range'}
+2026-08-24T16:34:54.788-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Finished assignment for group at generation 13: {consumer-airline-recovery-group-1-e3602cc4-264b-46f6-a7ea-357cf61d4646=Assignment(partitions=[flight.disrupted-0, flight.disrupted-1, flight.disrupted-2])}
+2026-08-24T16:34:54.818-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Successfully synced group in generation Generation{generationId=13, memberId='consumer-airline-recovery-group-1-e3602cc4-264b-46f6-a7ea-357cf61d4646', protocol='range'}
+2026-08-24T16:34:54.825-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Notifying assignor about the new Assignment(partitions=[flight.disrupted-0, flight.disrupted-1, flight.disrupted-2])
+2026-08-24T16:34:54.831-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-airline-recovery-group-1, groupId=airline-recovery-group] Adding newly assigned partitions: [flight.disrupted-0, flight.disrupted-1, flight.disrupted-2]
+2026-08-24T16:34:54.865-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition flight.disrupted-1 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-08-24T16:34:54.870-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition flight.disrupted-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-08-24T16:34:54.871-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition flight.disrupted-2 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-08-24T16:34:54.873-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : airline-recovery-group: partitions assigned: [flight.disrupted-0, flight.disrupted-1, flight.disrupted-2]
+2026-08-24T16:35:13.871-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-24T16:35:13.871-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-08-24T16:35:13.872-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.arrival_time,
+        f1_0.available_seats,
+        f1_0.departure_time,
+        f1_0.destination,
+        f1_0.flight_number,
+        f1_0.origin,
+        f1_0.status 
+    from
+        flights f1_0 
+    where
+        f1_0.id=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.arrival_time,
+        f1_0.available_seats,
+        f1_0.departure_time,
+        f1_0.destination,
+        f1_0.flight_number,
+        f1_0.origin,
+        f1_0.status 
+    from
+        flights f1_0 
+    where
+        f1_0.id=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.arrival_time,
+        f1_0.available_seats,
+        f1_0.departure_time,
+        f1_0.destination,
+        f1_0.flight_number,
+        f1_0.origin,
+        f1_0.status 
+    from
+        flights f1_0 
+    where
+        f1_0.id=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.arrival_time,
+        f1_0.available_seats,
+        f1_0.departure_time,
+        f1_0.destination,
+        f1_0.flight_number,
+        f1_0.origin,
+        f1_0.status 
+    from
+        flights f1_0 
+    where
+        f1_0.id=?
+Hibernate: 
+    update
+        flights 
+    set
+        arrival_time=?,
+        available_seats=?,
+        departure_time=?,
+        destination=?,
+        flight_number=?,
+        origin=?,
+        status=? 
+    where
+        id=?
+2026-08-24T16:35:23.109-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-2] o.a.kafka.common.config.AbstractConfig   : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = airline-recovery-platform-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	config.providers = []
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JacksonJsonSerializer
+
+2026-08-24T16:35:23.110-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-2] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-08-24T16:35:23.119-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-2] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=airline-recovery-platform-producer-1] Instantiated an idempotent producer.
+2026-08-24T16:35:23.134-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-2] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.2.1
+2026-08-24T16:35:23.134-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-2] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 92f61c44867f39dc
+2026-08-24T16:35:23.134-05:00  INFO 65639 --- [airline-recovery-platform] [nio-8080-exec-2] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1787607323134
+2026-08-24T16:35:23.141-05:00  INFO 65639 --- [airline-recovery-platform] [form-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=airline-recovery-platform-producer-1] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2026-08-24T16:35:23.144-05:00  INFO 65639 --- [airline-recovery-platform] [form-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=airline-recovery-platform-producer-1] ProducerId set to 2 with epoch 0
+2026-08-24T16:35:23.197-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] c.a.r.event.FlightDisruptionConsumer     : >>> RECEIVED KAFKA EVENT: flightId=2, flightNumber=AA201, status=CANCELLED
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.arrival_time,
+        f1_0.available_seats,
+        f1_0.departure_time,
+        f1_0.destination,
+        f1_0.flight_number,
+        f1_0.origin,
+        f1_0.status 
+    from
+        flights f1_0 
+    where
+        f1_0.id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.created_at,
+        b1_0.flight_id,
+        b1_0.passenger_id,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.flight_id=? 
+        and b1_0.status=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.arrival_time,
+        f1_0.available_seats,
+        f1_0.departure_time,
+        f1_0.destination,
+        f1_0.flight_number,
+        f1_0.origin,
+        f1_0.status 
+    from
+        flights f1_0 
+    where
+        upper(f1_0.origin)=upper(?) 
+        and upper(f1_0.destination)=upper(?)
+Hibernate: 
+    update
+        bookings 
+    set
+        created_at=?,
+        flight_id=?,
+        passenger_id=?,
+        status=? 
+    where
+        id=?
+Hibernate: 
+    update
+        flights 
+    set
+        arrival_time=?,
+        available_seats=?,
+        departure_time=?,
+        destination=?,
+        flight_number=?,
+        origin=?,
+        status=? 
+    where
+        id=?
+2026-08-24T16:35:23.681-05:00  INFO 65639 --- [airline-recovery-platform] [ntainer#0-0-C-1] c.a.r.event.FlightDisruptionConsumer     : >>> REBOOKING FINISHED FOR AA201
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.created_at,
+        b1_0.flight_id,
+        b1_0.passenger_id,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.flight_id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.created_at,
+        b1_0.flight_id,
+        b1_0.passenger_id,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.flight_id=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.arrival_time,
+        f1_0.available_seats,
+        f1_0.departure_time,
+        f1_0.destination,
+        f1_0.flight_number,
+        f1_0.origin,
+        f1_0.status 
+    from
+        flights f1_0 
+    where
+        f1_0.id=?
+Hibernate: 
+    select
+        f1_0.id,
+        f1_0.arrival_time,
+        f1_0.available_seats,
+        f1_0.departure_time,
+        f1_0.destination,
+        f1_0.flight_number,
+        f1_0.origin,
+        f1_0.status 
+    from
+        flights f1_0 
+    where
+        f1_0.id=?
