@@ -1,19 +1,16 @@
 package com.airline.recovery.service;
 
-
-
 import com.airline.recovery.entity.Booking;
 import com.airline.recovery.entity.BookingStatus;
 import com.airline.recovery.entity.Flight;
 import com.airline.recovery.entity.FlightStatus;
 import com.airline.recovery.entity.ProcessedEvent;
-
+import com.airline.recovery.repository.ProcessedEventRepository;
 import com.airline.recovery.event.FlightDisruptedEvent;
 import com.airline.recovery.exception.FlightNotFoundException;
-
 import com.airline.recovery.repository.BookingRepository;
 import com.airline.recovery.repository.FlightRepository;
-import com.airline.recovery.repository.ProcessedEventRepository;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

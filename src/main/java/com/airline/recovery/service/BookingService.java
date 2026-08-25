@@ -32,48 +32,61 @@ public class BookingService {
     @Transactional
     public Booking createBooking(BookingRequest request) {
 
+      
         Flight flight = flightRepository.findById(request.getFlightId())
                 .orElseThrow(() ->
                         new FlightNotFoundException(request.getFlightId()));
 
+    
         if (flight.getStatus() == FlightStatus.CANCELLED) {
             throw new BookingConflictException(
                     "Cannot book a cancelled flight"
             );
         }
 
+      
         if (flight.getStatus() == FlightStatus.DEPARTED ||
                 flight.getStatus() == FlightStatus.ARRIVED) {
 
             throw new BookingConflictException(
-                    "Cannot book a flight that has already departed"
+                    "Cannot book a flight that has already departed or arrived"
             );
         }
 
-        if (flight.getAvailableSeats() <= 0) {
+        
+        int updatedRows =
+                flightRepository.decrementSeatIfAvailable(flight.getId());
+
+  
+        if (updatedRows == 0) {
             throw new BookingConflictException(
-                    "No seats available for flight " +
-                            flight.getFlightNumber()
+                    "No available seats for flight: "
+                            + flight.getFlightNumber()
             );
         }
 
-        flight.setAvailableSeats(
-                flight.getAvailableSeats() - 1
-        );
+       
+        Flight updatedFlight = flightRepository.findById(flight.getId())
+                .orElseThrow(() ->
+                        new FlightNotFoundException(flight.getId()));
 
-        flightRepository.save(flight);
-
+       
         Booking booking = new Booking(
                 request.getPassengerId(),
-                flight,
+                updatedFlight,
                 BookingStatus.CONFIRMED,
                 LocalDateTime.now()
         );
 
+        
         return bookingRepository.save(booking);
     }
 
     public List<Booking> getBookingsByFlight(Long flightId) {
+
+        if (!flightRepository.existsById(flightId)) {
+            throw new FlightNotFoundException(flightId);
+        }
 
         return bookingRepository.findByFlight_Id(flightId);
     }
