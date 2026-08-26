@@ -32,19 +32,16 @@ public class BookingService {
     @Transactional
     public Booking createBooking(BookingRequest request) {
 
-      
         Flight flight = flightRepository.findById(request.getFlightId())
                 .orElseThrow(() ->
                         new FlightNotFoundException(request.getFlightId()));
 
-    
         if (flight.getStatus() == FlightStatus.CANCELLED) {
             throw new BookingConflictException(
                     "Cannot book a cancelled flight"
             );
         }
 
-      
         if (flight.getStatus() == FlightStatus.DEPARTED ||
                 flight.getStatus() == FlightStatus.ARRIVED) {
 
@@ -53,11 +50,9 @@ public class BookingService {
             );
         }
 
-        
         int updatedRows =
                 flightRepository.decrementSeatIfAvailable(flight.getId());
 
-  
         if (updatedRows == 0) {
             throw new BookingConflictException(
                     "No available seats for flight: "
@@ -65,12 +60,10 @@ public class BookingService {
             );
         }
 
-       
         Flight updatedFlight = flightRepository.findById(flight.getId())
                 .orElseThrow(() ->
                         new FlightNotFoundException(flight.getId()));
 
-       
         Booking booking = new Booking(
                 request.getPassengerId(),
                 updatedFlight,
@@ -78,8 +71,11 @@ public class BookingService {
                 LocalDateTime.now()
         );
 
-        
         return bookingRepository.save(booking);
+    }
+
+    public List<Booking> getAllBookings() {
+        return bookingRepository.findAll();
     }
 
     public List<Booking> getBookingsByFlight(Long flightId) {

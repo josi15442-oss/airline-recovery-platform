@@ -31,6 +31,14 @@ public class BookingController {
                 .body(booking);
     }
 
+    @GetMapping
+    public ResponseEntity<List<Booking>> getAllBookings() {
+
+        return ResponseEntity.ok(
+                bookingService.getAllBookings()
+        );
+    }
+
     @GetMapping("/flight/{flightId}")
     public ResponseEntity<List<Booking>> getBookingsByFlight(
             @PathVariable Long flightId) {
