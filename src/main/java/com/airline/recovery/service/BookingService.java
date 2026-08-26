@@ -46,26 +46,27 @@ public class BookingService {
                 flight.getStatus() == FlightStatus.ARRIVED) {
 
             throw new BookingConflictException(
-                    "Cannot book a flight that has already departed"
+                    "Cannot book a flight that has already departed or arrived"
             );
         }
 
-        if (flight.getAvailableSeats() <= 0) {
+        int updatedRows =
+                flightRepository.decrementSeatIfAvailable(flight.getId());
+
+        if (updatedRows == 0) {
             throw new BookingConflictException(
-                    "No seats available for flight " +
-                            flight.getFlightNumber()
+                    "No available seats for flight: "
+                            + flight.getFlightNumber()
             );
         }
 
-        flight.setAvailableSeats(
-                flight.getAvailableSeats() - 1
-        );
-
-        flightRepository.save(flight);
+        Flight updatedFlight = flightRepository.findById(flight.getId())
+                .orElseThrow(() ->
+                        new FlightNotFoundException(flight.getId()));
 
         Booking booking = new Booking(
                 request.getPassengerId(),
-                flight,
+                updatedFlight,
                 BookingStatus.CONFIRMED,
                 LocalDateTime.now()
         );
@@ -73,7 +74,15 @@ public class BookingService {
         return bookingRepository.save(booking);
     }
 
+    public List<Booking> getAllBookings() {
+        return bookingRepository.findAll();
+    }
+
     public List<Booking> getBookingsByFlight(Long flightId) {
+
+        if (!flightRepository.existsById(flightId)) {
+            throw new FlightNotFoundException(flightId);
+        }
 
         return bookingRepository.findByFlight_Id(flightId);
     }
